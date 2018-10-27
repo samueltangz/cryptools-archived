@@ -11,8 +11,13 @@ jobs:
 
       - run:
           name: install module
-          command: python setup.py install
+          command: |
+            python -m venv venv
+            . venv/bin/activate
+            python setup.py install
 
       - run:
           name: run tests
-          command: python setup.py test
+          command: |
+            . venv/bin/activate
+            python setup.py test

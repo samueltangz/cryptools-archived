@@ -12,6 +12,7 @@ jobs:
       - run:
           name: install module
           command: |
+            sudo apt-get install python-dev
             mkdir -p ./venv
             virtualenv ./venv
             . venv/bin/activate

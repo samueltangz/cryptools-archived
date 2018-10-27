@@ -1,0 +1,40 @@
+RSA attacks:
+
+Obtain p, q when given e, d, n
+Common modulus attack
+Wiener attack
+Broadcast attack / Coppersmith attack
+Partial key exposure
+Bleichenbacher's million message attack
+LSB oracle
+
+
+Paillier:
+
+...
+
+
+Block cipher:
+
+Bit-flipping attack for CBC
+Padding oracle for CBC
+
+
+Hash:
+
+Length extension attack
+
+
+
+Install: `sudo python setup.py install`
+Test: `python setup.py test`
+
+
+
+util
+|- type conversion (int, hex, base64, string)
+|- 
+
+math
+|- gcd
+|- powmod

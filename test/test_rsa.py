@@ -3,11 +3,11 @@ from gmpy2 import powmod
 
 from cryptools import RSA
 class TestRSA(unittest.TestCase):
-  def setUp(s):
+  def setUp(self):
     pass
 
   # Basic object testing
-  def test_object(s):
+  def test_object(self):
     p = 10**9 + 7
     q = 10**9 + 9
     n = p * q
@@ -15,50 +15,47 @@ class TestRSA(unittest.TestCase):
     d = 648946405777194593
 
     rsa = RSA(n, e)
-    s.assertTrue(rsa.is_public())
-    s.assertFalse(rsa.is_private())
-    s.assertEqual(rsa.n, n)
-    s.assertEqual(rsa.e, e)
-    s.assertEqual(rsa.encrypt(1), 1)
+    self.assertTrue(rsa.is_public())
+    self.assertFalse(rsa.is_private())
+    self.assertEqual(rsa.n, n)
+    self.assertEqual(rsa.e, e)
+    self.assertEqual(rsa.encrypt(1), 1)
 
     '''
     rsa = RSA(n, e, d=d)
-    s.assertFalse(rsa.is_public())
-    s.assertTrue(rsa.is_private())
-    s.assertEqual(rsa.n, n)
-    s.assertEqual(rsa.e, e)
-    s.assertEqual(rsa.d, d)
-    s.assertGreater(rsa.p, 1)
-    s.assertGreater(rsa.q, 1)
-    s.assertEqual(rsa.p * rsa.q, n)
-    s.assertEqual(rsa.encrypt(1), 1)
-    s.assertEqual(rsa.decrypt(1), 1)
+    self.assertFalse(rsa.is_public())
+    self.assertTrue(rsa.is_private())
+    self.assertEqual(rsa.n, n)
+    self.assertEqual(rsa.e, e)
+    self.assertEqual(rsa.d, d)
+    self.assertGreater(rsa.p, 1)
+    self.assertGreater(rsa.q, 1)
+    self.assertEqual(rsa.p * rsa.q, n)
+    self.assertEqual(rsa.encrypt(1), 1)
+    self.assertEqual(rsa.decrypt(1), 1)
     '''
 
     rsa = RSA(n, e, p=p)
-    s.assertFalse(rsa.is_public())
-    s.assertTrue(rsa.is_private())
-    s.assertEqual(rsa.n, n)
-    s.assertEqual(rsa.e, e)
-    s.assertEqual(rsa.d, d)
-    s.assertEqual(rsa.p, p)
-    s.assertEqual(rsa.q, n / p)
-    s.assertEqual(rsa.encrypt(1), 1)
-    s.assertEqual(rsa.decrypt(1), 1)
+    self.assertFalse(rsa.is_public())
+    self.assertTrue(rsa.is_private())
+    self.assertEqual(rsa.n, n)
+    self.assertEqual(rsa.e, e)
+    self.assertEqual(rsa.d, d)
+    self.assertEqual(rsa.p, p)
+    self.assertEqual(rsa.q, n / p)
+    self.assertEqual(rsa.encrypt(1), 1)
+    self.assertEqual(rsa.decrypt(1), 1)
 
     # PEM and object conversion
     '''
     rsa = RSA.import_pem('-----BEGIN PUBLIC KEY-----\nMBswDQYJKoZIhvcNAQEBBQADCgAwBwICAUMCAQc=\n-----END PUBLIC KEY-----')
-    s.assertTrue(rsa.is_public())
-    s.assertFalse(rsa.is_private())
-    s.assertEqual(rsa.n, n)
-    s.assertEqual(rsa.e, e)
-    s.assertEqual(rsa.encrypt(1), 1)
+    self.assertTrue(rsa.is_public())
+    self.assertFalse(rsa.is_private())
+    self.assertEqual(rsa.n, n)
+    self.assertEqual(rsa.e, e)
+    self.assertEqual(rsa.encrypt(1), 1)
     '''
     # Import a private key
     # rsa.to_pem()
     # Export a public key
     # Export a private key
-
-  def test_(s):
-    pass

@@ -9,3 +9,6 @@ class MD5(object):
     
     def hexdigest(self):
         return self.hashobj.hexdigest()
+
+    def digest(self):
+        return self.hashobj.digest()

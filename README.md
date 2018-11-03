@@ -36,6 +36,9 @@ python setup.py test # Test
     1. **TODO** MD5
     2. **TODO** SHA1
     3. **TODO** SHA2
+* Random numbers
+    1. **TODO** Linear congruential generator
+    2. **TODO** Mersenne twist
 
 ### Attacks
 
@@ -52,3 +55,6 @@ python setup.py test # Test
     1. **TODO** Padding oracle for CBC
 * Hash attacks
     1. **TODO** Length extension attack for Merkle-Damgard scheme hashes
+* Random numbers attack
+    1. **TODO** Recovering LCG
+    2. **TODO** Recovering MT19937 with internal states
